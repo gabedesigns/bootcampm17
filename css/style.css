@@ -2,68 +2,72 @@ body {
   background-color: #082B59;
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   line-height: 2;
 }
+
 h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
+
 h1 {
   font-size: 2rem;
   margin-bottom: 0;
 }
-/* make images flexible */
+
 img {
   max-width: 100%;
 }
+
 a {
   color: #59331d;
 }
-a:hover {
+a :hover {
   text-decoration: none;
 }
+
 header {
   border-bottom: 10px solid #d98555;
 }
+
 /* navbar styling */
-nav{
+nav {
   padding: 1rem;
 }
-
 nav ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
+  align-items: center;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  align-items: center;
 }
 nav li {
-  margin: 0 1rem 1rem 1rem;
+  margin: 0 1 margin1 margin1;
   font-size: 1.3rem;
 }
-/* max width on the image in pixels */
-nav .logo img {
-  max-width: 175px;
-}
-/* flex basis on the image container, li */
 nav .logo {
   text-align: center;
 }
+nav .logo img {
+  max-width: 175px;
+}
 nav a {
-  color: white;
+  color: #f2f2f2;
   text-decoration: none;
   display: block;
 }
-nav a:hover {
+nav a :hover {
   color: #d98555;
 }
+
 /* establishes a white background */
 .main-bkgd {
-  background: #ffffff url(../media/gulp-bottom-beans.jpg) repeat-x bottom;
+  background: #f2f2f2 url(../media/gulp-bottom-beans.jpg) repeat-x bottom;
   padding-bottom: 300px;
 }
+
 /* sits inside of the white background, centered */
 .main {
   max-width: 1200px;
@@ -73,9 +77,11 @@ nav a:hover {
   flex-flow: row wrap;
   justify-content: space-between;
 }
+
 article {
   flex-basis: 73%;
 }
+
 figure {
   margin: 3rem 0 0 0;
   flex-basis: 25%;
@@ -86,13 +92,15 @@ figure img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
 figcaption {
   color: #f2f2f2;
   padding: 0.5rem;
 }
+
 .button {
   display: inline-block;
-  background-color: #59331D;
+  background-color: #59331d;
   border-radius: 10px;
   padding: 0.5rem 1rem;
   margin: 0;
@@ -100,10 +108,11 @@ figcaption {
   text-decoration: none;
   border: 3px solid #59331d;
 }
-.button:hover {
+.button :hover {
   background-color: #f2f2f2;
   color: #59331d;
 }
+
 footer {
   color: #f2f2f2;
   text-align: center;
@@ -124,46 +133,47 @@ footer a {
   margin: 0 1rem 3rem 1rem;
 }
 
-.main{
+.main {
   display: flex;
   flex-direction: column;
 }
 
-.productgrid{
-  display: grid; 
+.productgrid {
+  display: grid;
   padding: 1rem;
 }
-
-.productgrid img{
+.productgrid img {
   border-radius: 15px;
 }
 
-.product1 h1{
+.product1 h1 {
   padding: 1rem;
 }
 
-@media (min-width: 768px){
-  .main{
+@media (min-width: 768px) {
+  .main {
     flex-direction: row;
   }
-  nav ul{
+
+  nav ul {
     flex-direction: row;
   }
-  .productgrid{
+
+  .productgrid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     padding: 2rem;
   }
 }
-
-@media (min-width: 992px){
+@media (min-width: 992px) {
   nav {
     display: flex;
     justify-content: space-between;
   }
-  .productgrid{
+
+  .productgrid {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     padding: 2rem;
   }
-}
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,201 @@
+//sass variables
+$color-white: #f2f2f2;
+$color-blue: #082B59;
+$color-brown: #59331d;
+$color-orange: #d98555;
+$text-align: center;
+$margin: 0;
+$padding: 0; 
+
+//mixins
+@mixin fontFamily ($font-family){
+  font-family: $font-family;
+}
+
+@mixin bodyItems ($flex-flow, $justify-content){
+  flex-flow: $flex-flow;
+  justify-content: $justify-content;
+}
+
+@mixin bodyAndFigures ($background-color, $border-radius){
+  background-color: $background-color;
+  border-radius: $border-radius;
+}
+
+//css body (nesting)
+body {
+  @include fontFamily (('Lato', sans-serif));
+  @include bodyAndFigures ($color-blue);
+  margin: $margin;
+  padding: $padding;
+  line-height: 2;
+}
+h1, h2, h3 {
+  @include fontFamily (('Poppins', sans-serif))
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+}
+a {
+  color: $color-brown;
+
+  & :hover{
+    text-decoration: none;
+  }
+}
+
+header {
+  border-bottom: 10px solid $color-orange;
+}
+/* navbar styling */
+nav{
+  padding: 1rem;
+
+  & ul{
+    padding: $padding;
+    margin: $margin;
+    list-style-type: none;
+    align-items: center;
+    display: flex;
+    @include bodyItems (column wrap, center);
+  }
+  & li {
+    margin: $margin $margin+1 margin+1 margin+1;
+    font-size: 1.3rem;
+  }
+  & .logo{
+    text-align: $text-align;
+
+    & img{
+      max-width: 175px;
+    } 
+  }
+  & a {
+    color: $color-white;
+    text-decoration: none;
+    display: block;
+
+    & :hover{
+      color: $color-orange;
+    }
+  }
+}
+
+/* establishes a white background */
+.main-bkgd {
+  background: $color-white url(../media/gulp-bottom-beans.jpg) repeat-x bottom;
+  padding-bottom: 300px;
+}
+/* sits inside of the white background, centered */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  @include bodyItems(row wrap, space-between);
+}
+article {
+  flex-basis: 73%;
+}
+figure {
+  margin: 3rem 0 0 0;
+  flex-basis: 25%;
+  @include bodyAndFigures ($color-brown, 10px);
+
+  & img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+figcaption {
+  color: $color-white;
+  padding: 0.5rem;
+}
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  color: $color-white;
+  text-decoration: none;
+  border: 3px solid $color-brown;
+  @include bodyAndFigures ($color-brown, 10px);
+
+  & :hover {
+    @include bodyAndFigures ($color-white);
+    color: $color-brown;
+  }
+}
+
+footer {
+  color: $color-white;
+  text-align: $text-align;
+  border-top: 10px solid $color-orange;
+
+  & ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  & a {
+    color: $color-white;
+    font-size: 2rem;
+    display: block;
+    margin: 0 1rem 3rem 1rem;
+  }
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+}
+
+.productgrid{
+  display: grid; 
+  padding: 1rem;
+
+  & img {
+    border-radius: 15px;
+  }
+}
+
+.product1 h1{
+  padding: 1rem;
+}
+
+// mobile
+@media (min-width: 768px){
+  .main{
+    flex-direction: row;
+  }
+  nav ul{
+    flex-direction: row;
+  }
+  .productgrid{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 2rem;
+  }
+  
+}
+
+@media (min-width: 992px){
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  .productgrid{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 2rem;
+  }
+}
